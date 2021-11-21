@@ -25,8 +25,8 @@ export default {
       width: 1em;
       height: 1em;
       vertical-align: -0.15em;
-      //fill: currentColor;
-      fill: #6fcb94;
+      fill: currentColor;
+      //fill: #6fcb94;
       overflow: hidden;
   }
 </style>
