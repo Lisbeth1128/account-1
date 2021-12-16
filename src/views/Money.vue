@@ -3,7 +3,7 @@
     <NumberPad /> 
     <Types />
     <Notes />
-    <Tags />
+    <Tags :dataSource="tags"/>
   </Layout>
 </template>
 
@@ -20,6 +20,11 @@ export default {
       Types,
       Notes,
       Tags
+  },
+  data() {
+    return {
+      tags: ['衣', '食', '住', '行']
+    }
   }
 };
 </script>
