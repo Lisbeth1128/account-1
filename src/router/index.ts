@@ -19,7 +19,7 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/Labels.vue')
   },
   {
-    path: '/labels/edit',
+    path: '/labels/edit/:id',
     name: 'EditLabel',
     component: () => import('../views/EditLabel.vue')
   },
