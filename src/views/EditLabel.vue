@@ -1,37 +1,76 @@
 <template>
   <Layout>
-    <Icon name="left"/>
-    <Notes field-name="标签名" placeholder="请输入标签名"/>
-    <span>编辑标签</span>
-  </Layout>    
+    <div class="navBar">
+      <Icon class="leftIcon" name="left" />
+      <span class="title">编辑标签</span>
+      <span class="rightIcon"></span>
+    </div>
+    <div class="form-wrapper">
+      <FormItem field-name="标签名" placeholder="请输入标签名" />
+    </div>
+    <div class="button-wrapper">
+      <Button>删除标签</Button>
+    </div>
+  </Layout>
 </template>
 
 <script lang="ts">
-import tagListModel from '@/models/tagListModel'
-import Vue from 'vue'
-import {Component} from 'vue-property-decorator'
-import Notes from '@/components/Money/Notes.vue'
+import tagListModel from "@/models/tagListModel";
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
+import FormItem from "@/components/Money/FormItem.vue";
+import Button from "@/components/Button.vue";
 
-@Component ({
+@Component({
   components: {
-    Notes
-  }
+    FormItem,
+    Button,
+  },
 })
 export default class EditLabel extends Vue {
-  created(){
-    const id = this.$route.params.id
-    tagListModel.fetch()
-    const tags = tagListModel.data
-    const tag = tags.filter(t => t.id === id)[0]
-    if(tag){
-      console.log(tag)
+  created() {
+    const id = this.$route.params.id;
+    tagListModel.fetch();
+    const tags = tagListModel.data;
+    const tag = tags.filter((t) => t.id === id)[0];
+    if (tag) {
+      console.log(tag);
     } else {
-      this.$router.replace('/NotFound')
+      this.$router.replace("/NotFound");
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.navBar {
+  text-align: center;
+  font-size: 16px;
+  padding: 12px 16px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > .title {
+  }
+  > .leftIcon {
+    width: 36px;
+    height: 36px;
+  }
+  > .rightIcon {
+    width: 36px;
+    height: 36px;
+  }
+}
 
+.form-wrapper {
+  background-color: white;
+  margin-top: 8px;
+}
+
+.button-wrapper {
+  text-align: center;
+  padding: 16px;
+  margin-top: 44-16px;
+}
 </style>
