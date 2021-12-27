@@ -14,7 +14,6 @@
 </template>
 
 <script lang="ts">
-/*global RecordItem*/
 
 import Vue from "vue";
 import NumberPad from "@/components/Money/NumberPad.vue";
