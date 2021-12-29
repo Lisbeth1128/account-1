@@ -10,6 +10,7 @@ module.exports = {
   ],
   'globals': {
     'RecordItem': true,
+    'Tag': true,
   },
   parserOptions: {
     ecmaVersion: 2020
