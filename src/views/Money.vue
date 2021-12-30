@@ -32,10 +32,14 @@ import store from "@/store/index2";
     FormItem,
     Tags,
   },
+  computed: {
+    recordList(){
+      return store.recordList
+    }
+  }
 })
 export default class Money extends Vue {
-  recordList = store.recordList;
-  record: RecordItem = {
+    record: RecordItem = {
     tags: [],
     notes: "",
     type: "-",
