@@ -17,6 +17,7 @@ export default class Tabs extends Vue {
     @Prop({required: true, type: Array}) dataSource!: {text: string, value: string}[]
     @Prop(String) readonly value!: string
     @Prop(String) classPrefix?: string
+    @Prop({type: String, default: '64px'}) height!: string
 
     select(item: dataSourceItem){
         this.$emit('update:value', item.value)
