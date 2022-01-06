@@ -57,6 +57,9 @@ export default class Money extends Vue {
 
   saveRecordItem() {
     this.$store.commit('createRecord', this.record)
+    if(this.$store.state.createRecordError === null){
+      window.alert('已保存')
+    }
   }
 
 }
